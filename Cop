@@ -1,0 +1,57 @@
+<apex:page showHeader="false" standardcontroller="Customer_Solutions_Requests__c" extensions="CustomerEngagementExtension" ><apex:messages />
+<br/>
+        <apex:image STYLE="PADDING-left: 20px;" url="https://dls--rrdsandbox--c.cs2.content.force.com/servlet/servlet.ImageServer?id=015R00000007D0x&oid=00DR0000000GXc1&lastMod=1377112497000" width="294px" height="70px" />  
+        <br/>
+    <apex:sectionheader title="CoPal Tray Request" />
+    <apex:form >
+        <apex:pageblock mode="edit">
+            <apex:pageblockbuttons >
+            <apex:commandbutton value="Save" action="{!Engagement_Save}"/>
+                <apex:commandbutton value="Cancel" immediate="true" action="javascript:window.location.href='http://rrdonnelley.rrdsandbox.cs2.force.com/CustomerEngagement'"/>
+            </apex:pageblockbuttons>
+
+
+                <apex:pageblocksection title="Print Origin (Lettershop)" showheader="true" columns="2">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Origin_Reference__c}" label="Shipping Origin" taborderhint="1" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Email_Address__c}" required="true" taborderhint="2" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Entry_Zip_of_Origin_Mail__c}" required="true" taborderhint="5" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Phone_Number__c}" required="true" taborderhint="3" />
+                    <apex:pageblocksectionitem />
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Job Information" showheader="true" columns="2">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Customer_Reference__c}" label="Customer" required="true" taborderhint="6" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Standard_Transit__c}" required="true" taborderhint="11" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Event_Name__c}" required="true" taborderhint="7" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Mail_Date__c}" required="false" taborderhint="12" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Job_Number__c}" required="true" taborderhint="8" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.First_In_home_Date__c}" required="false" taborderhint="13" />
+                    <apex:inputfield id="billTo" value="{!Customer_Solutions_Requests__c.Bill_To__c}" label="Bill To" required="true"  />
+                <script type="text/javascript">
+                    document.getElementById('{!$Component.page.form.pgBlkMain.pgBlkSecJI.billTo}_lkwgt').style.display = 'none';
+                </script> 
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Last_In_home_Date__c}" required="false" taborderhint="14"/>
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Permit_Number__c}" required="false" taborderhint="10" />
+                    <apex:pageblocksectionitem />
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Mail.Dat Processing Request / Instructions" showheader="true" columns="2">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.CoTray_Analysis__c}" required="true" taborderhint="15" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Return_File_Preference__c}" required="true" taborderhint="17" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Origin_MXAADC_Trays__c}" required="true" taborderhint="16" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.FTP_Site_link__c}" required="false" taborderhint="18" />
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.FTP_Site_User_ID__c}" required="false" taborderhint="19" />
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.FTP_Site_Password__c}" required="false" taborderhint="20" />
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Postal Documents" showheader="true" columns="2">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Combine_Documentation__c}" required="false" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Pallet_Flags__c}" required="false" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Container_Summary_Report__c}" required="false"/>
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Container_Tracking_Provides_Order_Dets__c}" required="false"/>
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.PreProduction_Report__c}" required="false"/>
+                    <apex:pageblocksectionitem />
+                </apex:pageblocksection>
+            
+                 </apex:pageblock>
+    </apex:form>
+</apex:page>
