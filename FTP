@@ -1,0 +1,34 @@
+<apex:page showHeader="false" standardcontroller="Customer_Solutions_Requests__c" extensions="CustomerEngagementExtension" ><apex:messages />
+<br/>
+        <apex:image STYLE="PADDING-left: 20px;" url="https://dls--rrdsandbox--c.cs2.content.force.com/servlet/servlet.ImageServer?id=015R00000007D0x&oid=00DR0000000GXc1&lastMod=1377112497000" width="294px" height="70px" />  
+        <br/>
+    <apex:sectionheader title="FTP Posting Notification" />
+    <apex:form >
+        <apex:pageblock mode="edit">
+			<apex:pageblockbuttons >
+				<apex:commandbutton value="Save" action="{!Engagement_Save}"/>
+				<apex:commandbutton value="Cancel" immediate="true" action="javascript:window.location.href='http://rrdonnelley.rrdsandbox.cs2.force.com/http://rrdonnelley.rrdsandbox.cs2.force.com/CustomerEngagement'"/>
+			</apex:pageblockbuttons>
+        
+				<apex:pageblocksection title="IMb Request Information" showheader="true" columns="1">
+					<apex:inputfield value="{!Customer_Solutions_Requests__c.Email_Address__c}" required="true"/>
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Event_Name__c}" required="true"/>
+					<apex:inputfield value="{!Customer_Solutions_Requests__c.Job_Number__c}" required="true"/>
+				<apex:pageblocksectionitem />
+                    
+                <apex:pageblocksection title="FTP Details" showheader="true" columns="1">
+                        <apex:inputfield value="{!Customer_Solutions_Requests__c.FTP_Name__c}" required="true"/>
+                        <apex:inputfield value="{!Customer_Solutions_Requests__c.FTP_Site_link__c}" required="false"/>
+				</apex:pageblocksection>
+                    
+                <apex:pageblocksection title="Posting (Count) Details" showheader="true" columns="1">
+                        <apex:inputfield value="{!Customer_Solutions_Requests__c.Mail_dat_s__c}" required="false"/>
+                        <apex:inputfield value="{!Customer_Solutions_Requests__c.Mail_File_s__c}" required="false"/>
+				</apex:pageblocksection>
+                    </apex:pageblocksection>
+        </apex:pageblock>  
+						
+       
+	</apex:form>
+	
+</apex:page>
