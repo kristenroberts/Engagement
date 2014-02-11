@@ -1,0 +1,395 @@
+<apex:page showHeader="false" standardcontroller="Customer_Solutions_Requests__c" extensions="CustomerEngagementExtension" ><apex:messages />
+<br/>
+  
+        <apex:image STYLE="PADDING-left: 20px;" url="https://dls--rrdsandbox--c.cs2.content.force.com/servlet/servlet.ImageServer?id=015R00000007D0x&oid=00DR0000000GXc1&lastMod=1377112497000" width="294px" height="70px" />  
+        <br/>
+    <apex:sectionheader title="OneSite® IMb™ Tracking Job Request " />
+        <c:Accordion >
+    <apex:form >
+        
+        
+        <apex:pageblock mode="edit" >
+             
+            <apex:pageblockbuttons >
+            <apex:commandbutton value="Save" action="{!Engagement_Save}"/>
+            <apex:commandbutton value="Cancel" immediate="true" action="javascript:window.location.href='http://rrdonnelley.force.com/CustomerEngagement'"/>
+        </apex:pageblockbuttons>
+               
+                        <apex:outputpanel >
+                            
+                    <apex:pageblocksection title="Requestor Information" showheader="true" columns="1">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Email_Address__c}" required="true" taborderhint="2" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.CC_Email__c}" />    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Additional_CC_Email__c}"/>
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Phone_Number__c}" required="true" taborderhint="3" />
+                    </apex:pageblocksection>
+                
+                    <apex:pageblocksection title="Customer Information" showheader="true" columns="1">
+                    <apex:inputtext value="{!Customer_Solutions_Requests__c.Customer_Name__c}" label="Customer" required="true"  />
+                    <apex:inputfield id="billTo" value="{!Customer_Solutions_Requests__c.Bill_To__c}" label="Bill To" required="true"  />
+                <script type="text/javascript">
+                    document.getElementById('{!$Component.page.form.pgBlkMain.pgBlkSecJI.billTo}_lkwgt').style.display = 'none';
+                </script> 
+                    </apex:pageblocksection>  
+                   
+                            
+                <apex:pageblocksection title="Requested Reporting Services" showheader="true" columns="1">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Destination_Outgoing__c}" required="false" taborderhint="6" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Business_Courtesy_Reply_Incoming__c}" required="false" taborderhint="7" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Address_Change_Service_Reporting_and_Opt__c}" required="false" taborderhint="8" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.AIIM__c}" required="true"/>
+                </apex:pageblocksection>
+                            
+                <apex:pageblocksection title="Event Details" showheader="true" columns="2">
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Event_Name__c}" required="true" taborderhint="9" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Job_Number__c}" required="true" taborderhint="17" />
+                    <apex:inputText value="{!Customer_Solutions_Requests__c.Lettershop_Name__c}" label="Lettershop" required="true" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Mailer_ID_Client_s_MID_Number_or_input__c}" required="true" taborderhint="18" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Entry_Zip_of_Origin_Mail__c}" required="true" taborderhint="11" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Destination_IMb_Service_Type__c}" required="false" taborderhint="19" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Include_Store_Reporting__c}" required="false" taborderhint="12" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.First_Class_IMb_Tracing_Service__c}" required="false" taborderhint="20" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Include_Name_Look_up__c}" required="false" taborderhint="13" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Periodicals_IMb_Tracing_Service__c}" required="false" taborderhint="21" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Include_Name_and_Address_Look_up__c}" required="false" taborderhint="14" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Standard_Mail_IMb_Tracing_Service__c}" required="false" taborderhint="22" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Include_Account_Number_Look_up__c}" required="false" taborderhint="15" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Business_Courtesy_Reply_IMb_Basic_Servic__c}" required="false" taborderhint="23" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Include_Seed_Markings_For_Special_Pieces__c}" required="false" taborderhint="16" />
+                    <apex:pageblocksectionitem />
+                </apex:pageblocksection>
+              
+                            
+             <c:AccordionSection title="Version 1-5 Details">
+                    <apex:pageblocksection >
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_Name__c}" required="false" taborderhint="24" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.First_In_home_Date__c}" required="false" taborderhint="27" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Mail_Class__c}" required="false" taborderhint="25" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Last_In_home_Date__c}" required="false" taborderhint="28" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Quantity__c}" required="false" taborderhint="26" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.First_Mail_Date__c}" required="false" taborderhint="29" />
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Last_Mail_Date__c}" required="false" taborderhint="30" />
+              
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_Name__c}" required="false" taborderhint="31" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_First_In_home_Date__c}" required="false" taborderhint="34" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_Mail_Class__c}" required="false" taborderhint="32" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_Last_In_home_Date__c}" required="false" taborderhint="35" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_Quantity__c}" required="false" taborderhint="33" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_First_Mail_Date__c}" required="false" taborderhint="36" />
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_2_Last_Mail_Date__c}" required="false" taborderhint="37"/>
+              
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_Name__c}" required="false" taborderhint="38" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_First_In_home_Date__c}" required="false" taborderhint="41" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_Mail_Class__c}" required="false" taborderhint="39" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_Last_In_home_Date__c}" required="false" taborderhint="42" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_Quantity__c}" required="false" taborderhint="40" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_First_Mail_Date__c}" required="false" taborderhint="43" />
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_3_Last_Mail_Date__c}" required="false" taborderhint="44"/>
+                
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_Name__c}" required="false" taborderhint="45" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_First_In_home_Date__c}" required="false" taborderhint="48" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_Mail_Class__c}" required="false" taborderhint="46" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_Last_In_home_Date__c}" required="false" taborderhint="49" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_Quantity__c}" required="false" taborderhint="47" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_First_Mail_Date__c}" required="false" taborderhint="50" />
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_4_Last_Mail_Date__c}" required="false" taborderhint="51"/>
+    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_Name__c}" required="false" taborderhint="52" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_First_In_home_Date__c}" required="false" taborderhint="55" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_Mail_Class__c}" required="false" taborderhint="53" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_Last_In_home_Date__c}" required="false" taborderhint="56" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_Quantity__c}" required="false" taborderhint="54" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_First_Mail_Date__c}" required="false" taborderhint="57" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_5_Last_Mail_Date__c}" required="false" taborderhint="58"/> 
+               </apex:pageblocksection>
+       </c:AccordionSection>
+      
+            
+    <c:AccordionSection title="Version 6-10 Details">
+                    <apex:pageblocksection >
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_Name__c}" required="false" taborderhint="59" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_First_In_home_Date__c}" required="false" taborderhint="62" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_Mail_Class__c}" required="false" taborderhint="60" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_Last_In_home_Date__c}" required="false" taborderhint="63" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_Quantity__c}" required="false" taborderhint="61" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_First_Mail_Date__c}" required="false" taborderhint="64" />
+                    <apex:pageblocksection />
+                        <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_6_Last_Mail_Date__c}" required="false" taborderhint="65"/> 
+                                                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_Name__c}" required="false" taborderhint="66" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_First_In_home_Date__c}" required="false" taborderhint="69" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_Mail_Class__c}" required="false" taborderhint="67" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_Last_In_home_Date__c}" required="false" taborderhint="70" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_Quantity__c}" required="false" taborderhint="68" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_First_Mail_Date__c}" required="false" taborderhint="71" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_7_Last_Mail_Date__c}" required="false" taborderhint="72"/> 
+           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_Name__c}" required="false" taborderhint="76" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_First_In_home_Date__c}" required="false" taborderhint="73" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_Mail_Class__c}" required="false" taborderhint="77" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_Last_In_home_Date__c}" required="false" taborderhint="74" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_Quantity__c}" required="false" taborderhint="78" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_First_Mail_Date__c}" required="false" taborderhint="75" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_8_Last_Mail_Date__c}" required="false" taborderhint="58"/> 
+           
+                     
+                     
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_Name__c}" required="false" taborderhint="83" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_First_In_home_Date__c}" required="false" taborderhint="80" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_Mail_Class__c}" required="false" taborderhint="84" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_Last_In_home_Date__c}" required="false" taborderhint="81" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_Quantity__c}" required="false" taborderhint="85" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_First_Mail_Date__c}" required="false" taborderhint="82" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_9_Last_Mail_Date__c}" required="false" taborderhint="58"/> 
+          
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_Name__c}" required="false" taborderhint="90" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_First_In_home_Date__c}" required="false" taborderhint="87" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_Mail_Class__c}" required="false" taborderhint="91" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_Last_In_home_Date__c}" required="false" taborderhint="88" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_Quantity__c}" required="false" taborderhint="92" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_First_Mail_Date__c}" required="false" taborderhint="89" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_10_Last_Mail_Date__c}" required="false" taborderhint="93"/>            
+                    
+          </apex:pageblocksection>              
+       </c:AccordionSection>
+
+                            
+        <c:AccordionSection title="Version 11-15 Details">
+                     <apex:pageblocksection >
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_Name__c}" required="false" taborderhint="94" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_First_In_home_Date__c}" required="false" taborderhint="97" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_Mail_Class__c}" required="false" taborderhint="95" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_Last_In_home_Date__c}" required="false" taborderhint="98" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_Quantity__c}" required="false" taborderhint="96" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_First_Mail_Date__c}" required="false" taborderhint="99" />
+                               <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_11_Last_Mail_Date__c}" required="false" taborderhint="100"/> 
+                
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_12_Name__c}" required="false" taborderhint="101" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_12_First_In_home_Date__c}" required="false" taborderhint="104" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_12_Mail_Class__c}" required="false" taborderhint="102" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_12_Last_In_home_Date__c}" required="false" taborderhint="105" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_12_Quantity__c}" required="false" taborderhint="103" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_12_First_Mail_Date__c}" required="false" taborderhint="106" />
+                               <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_Last_Mail_Date__c}" required="false" taborderhint="107"/>            
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_Name__c}" required="false" taborderhint="108" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_First_In_home_Date__c}" required="false" taborderhint="111" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_Mail_Class__c}" required="false" taborderhint="109" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_Last_In_home_Date__c}" required="false" taborderhint="112" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_Quantity__c}" required="false" taborderhint="110" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_13_First_Mail_Date__c}" required="false" taborderhint="113" />
+                               <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_Last_Mail_Date__c}" required="false" taborderhint="114"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_Name__c}" required="false" taborderhint="115" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_First_In_home_Date__c}" required="false" taborderhint="118" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_Mail_Class__c}" required="false" taborderhint="116" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_Last_In_home_Date__c}" required="false" taborderhint="119" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_Quantity__c}" required="false" taborderhint="117" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_14_First_Mail_Date__c}" required="false" taborderhint="120" />
+                               <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_Last_Mail_Date__c}" required="false" taborderhint="121"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_Name__c}" required="false" taborderhint="122" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_First_In_home_Date__c}" required="false" taborderhint="125" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_Mail_Class__c}" required="false" taborderhint="123" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_Last_In_home_Date__c}" required="false" taborderhint="126" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_Quantity__c}" required="false" taborderhint="124" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_First_Mail_Date__c}" required="false" taborderhint="127" />
+                               <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_15_Last_Mail_Date__c}" required="false" taborderhint="128"/>           
+                    </apex:pageblocksection>
+       </c:AccordionSection>    
+                            
+                <c:AccordionSection title="Version 16-20 Details">
+                    <apex:pageblocksection >
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_Name__c}" required="false" taborderhint="129" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_First_In_home_Date__c}" required="false" taborderhint="132" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_Mail_Class__c}" required="false" taborderhint="130" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_Last_In_home_Date__c}" required="false" taborderhint="133" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_Quantity__c}" required="false" taborderhint="131" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_First_Mail_Date__c}" required="false" taborderhint="134" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_16_Last_Mail_Date__c}" required="false" taborderhint="135"/> 
+                
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_Name__c}" required="false" taborderhint="135" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_First_In_home_Date__c}" required="false" taborderhint="138" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_Mail_Class__c}" required="false" taborderhint="136" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_Last_In_home_Date__c}" required="false" taborderhint="139" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_Quantity__c}" required="false" taborderhint="137" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_First_Mail_Date__c}" required="false" taborderhint="140" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_17_Last_Mail_Date__c}" required="false" taborderhint="141"/>            
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_Name__c}" required="false" taborderhint="142" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_First_In_home_Date__c}" required="false" taborderhint="145" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_Mail_Class__c}" required="false" taborderhint="143" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_Last_In_home_Date__c}" required="false" taborderhint="146" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_Quantity__c}" required="false" taborderhint="144" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_First_Mail_Date__c}" required="false" taborderhint="147" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_18_Last_Mail_Date__c}" required="false" taborderhint="148"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_Name__c}" required="false" taborderhint="149" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_First_In_home_Date__c}" required="false" taborderhint="152" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_Mail_Class__c}" required="false" taborderhint="150" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_Last_In_home_Date__c}" required="false" taborderhint="153" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_Quantity__c}" required="false" taborderhint="151" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_First_Mail_Date__c}" required="false" taborderhint="154" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_19_Last_Mail_Date__c}" required="false" taborderhint="155"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_Name__c}" required="false" taborderhint="156" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_First_In_home_Date__c}" required="false" taborderhint="159" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_Mail_Class__c}" required="false" taborderhint="157" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_Last_In_home_Date__c}" required="false" taborderhint="160" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_Quantity__c}" required="false" taborderhint="158" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_First_Mail_Date__c}" required="false" taborderhint="161" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_20_Last_Mail_Date__c}" required="false" taborderhint="162"/>           
+                    </apex:pageblocksection>
+       </c:AccordionSection>                    
+                            
+                <c:AccordionSection title="Version 21-25 Details">
+                    <apex:pageblocksection >
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_Name__c}" required="false" taborderhint="163" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_First_In_home_Date__c}" required="false" taborderhint="166" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_Mail_Class__c}" required="false" taborderhint="164" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_Last_In_home_Date__c}" required="false" taborderhint="167" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_Quantity__c}" required="false" taborderhint="165" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_First_Mail_Date__c}" required="false" taborderhint="168" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_21_Last_Mail_Date__c}" required="false" taborderhint="169"/> 
+                
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_Name__c}" required="false" taborderhint="170" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_First_In_home_Date__c}" required="false" taborderhint="173" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_Mail_Class__c}" required="false" taborderhint="171" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_Last_In_home_Date__c}" required="false" taborderhint="174" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_Quantity__c}" required="false" taborderhint="172" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_First_Mail_Date__c}" required="false" taborderhint="175" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_22_Last_Mail_Date__c}" required="false" taborderhint="176"/>            
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_Name__c}" required="false" taborderhint="178" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_First_In_home_Date__c}" required="false" taborderhint="181" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_Mail_Class__c}" required="false" taborderhint="179" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_Last_In_home_Date__c}" required="false" taborderhint="182" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_Quantity__c}" required="false" taborderhint="180" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_First_Mail_Date__c}" required="false" taborderhint="183" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_23_Last_Mail_Date__c}" required="false" taborderhint="184"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_Name__c}" required="false" taborderhint="185" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_First_In_home_Date__c}" required="false" taborderhint="188" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_Mail_Class__c}" required="false" taborderhint="186" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_Last_In_home_Date__c}" required="false" taborderhint="189" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_Quantity__c}" required="false" taborderhint="187" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_First_Mail_Date__c}" required="false" taborderhint="190" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_24_Last_Mail_Date__c}" required="false" taborderhint="191"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_Name__c}" required="false" taborderhint="192" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_First_In_home_Date__c}" required="false" taborderhint="195" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_Mail_Class__c}" required="false" taborderhint="193" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_Last_In_home_Date__c}" required="false" taborderhint="196" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_Quantity__c}" required="false" taborderhint="194" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_First_Mail_Date__c}" required="false" taborderhint="197" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_25_Last_Mail_Date__c}" required="false" taborderhint="198"/>           
+                    </apex:pageblocksection>
+       </c:AccordionSection>                    
+                            
+                         <c:AccordionSection title="Version 25-30 Details">
+                    <apex:pageblocksection >
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_Name__c}" required="false" taborderhint="199" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_First_In_home_Date__c}" required="false" taborderhint="202" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_Mail_Class__c}" required="false" taborderhint="200" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_Last_In_home_Date__c}" required="false" taborderhint="203" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_Quantity__c}" required="false" taborderhint="201" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_First_Mail_Date__c}" required="false" taborderhint="204" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_26_Last_Mail_Date__c}" required="false" taborderhint="205"/>            
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_Name__c}" required="false" taborderhint="206" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_First_In_home_Date__c}" required="false" taborderhint="209" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_Mail_Class__c}" required="false" taborderhint="207" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_Last_In_home_Date__c}" required="false" taborderhint="210" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_Quantity__c}" required="false" taborderhint="208" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_First_Mail_Date__c}" required="false" taborderhint="211" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_27_Last_Mail_Date__c}" required="false" taborderhint="212"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_Name__c}" required="false" taborderhint="213" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_First_In_home_Date__c}" required="false" taborderhint="216" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_Mail_Class__c}" required="false" taborderhint="214" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_Last_In_home_Date__c}" required="false" taborderhint="217" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_Quantity__c}" required="false" taborderhint="215" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_First_Mail_Date__c}" required="false" taborderhint="218" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_28_Last_Mail_Date__c}" required="false" taborderhint="219"/>           
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_29_Name__c}" required="false" taborderhint="220" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_29_First_In_home_Date__c}" required="false" taborderhint="224" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_29_Mail_Class__c}" required="false" taborderhint="221" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_29_Last_In_home_Date__c}" required="false" taborderhint="225" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_29_Quantity__c}" required="false" taborderhint="223" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_29_First_Mail_Date__c}" required="false" taborderhint="226" />
+                    <apex:pageblocksection />
+                    
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_Last_Mail_Date__c}" required="false" taborderhint="227"/>           
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_Name__c}" required="false" taborderhint="230" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_First_In_home_Date__c}" required="false" taborderhint="228" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_Mail_Class__c}" required="false" taborderhint="231" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_Last_In_home_Date__c}" required="false" taborderhint="229" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_Quantity__c}" required="false" taborderhint="232" />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_First_Mail_Date__c}" required="false" taborderhint="233" />
+                    <apex:pageblocksection />
+                    <apex:inputfield value="{!Customer_Solutions_Requests__c.Version_30_Last_Mail_Date__c}" required="false" taborderhint="234"/> 
+                    </apex:pageblocksection>
+            </c:AccordionSection>           
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            </apex:outputpanel>
+                    </apex:pageblock>
+    
+        <apex:pageBlock title="Additional Versions" id="block1" >
+<p>Please attach additional versions below </p>
+            <apex:repeat value="{!newAttachments}" var="newAtt">
+                <apex:pageBlockSection columns="3" >
+                   <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="File"/>                         
+                        <apex:inputFile value="{!newAtt.body}" filename="{!newAtt.name}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Description"/>                      
+                        <apex:inputText value="{!newAtt.Description}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:commandButton value="Add More" action="{!addMore}"/>
+                    </apex:pageBlockSection>
+                    </apex:repeat>
+          </apex:pageBlock>
+             
+    </apex:form>
+</c:Accordion>
+        </apex:page>
